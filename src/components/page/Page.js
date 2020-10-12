@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+//import { gsap } from "gsap";
+import { TweenMax, Power4 } from "gsap";
 //Components
 import Titre from "../UI/h2/Titre2";
 import SousTitre from "../UI/soustitre/Soustitre";
@@ -12,10 +13,16 @@ function Page(props) {
     let pageRef = useRef(null);
 
     useEffect(() => {
-        gsap.to(pageRef, { opacity: 1, pointerEvents: "auto", duration: 4 });
+        //gsap.to(pageRef, { opacity: 1, pointerEvents: "auto", duration: 4 });
 
         return () => {
-            gsap.to(pageRef, { opacity: 0, pointerEvents: "none", duration: 4 });
+            TweenMax.to(pageRef, 4, {
+                css: {
+                    opacity: "0",
+                    pointerEvents: "none",
+                },
+            });
+            //gsap.to(pageRef, { opacity: 0, pointerEvents: "none", duration: 4 });
             //gsap.fromTo(roseRef, { yPercent: -100 }, { yPercent: 200, duration: 1, ease: "power1.inOut" });
         };
     }, []);
