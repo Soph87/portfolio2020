@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.brasD {
+    display: none;
+}
+
+.brasG {
+    margin: 2em auto;
+}
+
+.brasG,
+.brasD {
+    max-width: 300px;
+}
+
+.formulaire {
+    background-color: #eaeaea;
+    margin: 1em -15px;
+    padding: 15px;
+    max-width: 500px;
+}
+
+.formgroup {
+    margin-bottom: 1.5em;
+}
+
+.labelHaut {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #5c565c;
+}
+
+.haut .formgroup input,
+.formgroup textarea {
+    width: 100%;
+    border: none;
+    background-color: #f5f5f5;
+    padding: 0.7em 1em;
+}
+
+.formgroup textarea {
+    resize: vertical;
+}
+
+.texteVal {
+    font-size: 0.8em;
+}
+
+.coche {
+    margin-right: 1em;
+}
+
+.submit {
+    padding: 1.5em 0 2.5em;
+    text-align: center;
+}
+
+.error {
+    color: #a54343;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+.haut .formgroup input.pasValide,
+.formgroup textarea.pasValide {
+    border: 1px solid #a54343;
+}
+
+.repOk,
+.repBad {
+    font-size: 1em;
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+.repBad {
+    color: #a54343;
+}
+
+.repOk {
+    color: #349153;
+}
+
+@media screen and (min-width: 500px) {
+    .formulaire {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .container {
+        flex-direction: row;
+        margin: 0 1em 2em;
+    }
+
+    .brasG {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .brasD {
+        display: block;
+    }
+
+    .container {
+        margin: 0 1em 5em;
+    }
+
+    .formulaire {
+        margin: 0;
+    }
+}

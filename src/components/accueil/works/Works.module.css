@@ -1,0 +1,10 @@
+.fonce {
+    background-color: #eaeaea;
+    padding: 3em 0 6em;
+}
+
+@media screen and (min-width: 600px) {
+    .fonce {
+        padding: 5em 0 7em;
+    }
+}

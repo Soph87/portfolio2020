@@ -1,0 +1,28 @@
+.titre {
+    font-family: Recoleta, sans-serif;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.titre a {
+    color: #2e2a2e;
+    text-decoration: none;
+    background-image: url("data:image/svg+xml;charset=utf8,<svg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 5'><style type='text/css'>.squiggle{animation:shift .8s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}</style><path fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,4c5,0,5-3,10-3s5,3,10,3s5-3,10-3s5,3,10,3'/></svg>");
+    background-position: 0 100%;
+    background-size: auto 6px;
+    background-repeat: repeat-x;
+}
+
+.titre a:hover {
+    background: linear-gradient(to bottom, #ff9800 0%, #ff9800 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 1px 2.5px;
+}
+
+@media screen and (min-width: 1000px) {
+    .titre {
+        font-size: 2.6em;
+    }
+}

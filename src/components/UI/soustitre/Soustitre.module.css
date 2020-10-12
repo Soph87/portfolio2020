@@ -1,0 +1,16 @@
+.sousTitre {
+    margin: 1.2em 0 2.5em;
+}
+
+@media screen and (min-width: 1000px) {
+    .sousTitre {
+        margin: 2em 0 3.5em;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .sousTitre {
+        font-size: 1.3em;
+        margin: 1em 0 3.5em;
+    }
+}

@@ -1,0 +1,21 @@
+.mentions {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 4em;
+}
+
+.mentions a {
+    color: #ff8627;
+    text-decoration: none;
+}
+
+.pcentre {
+    text-align: center;
+}
+
+.titres {
+    font-family: Recoleta, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 3em 0 0.8em;
+}
