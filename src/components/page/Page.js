@@ -14,6 +14,13 @@ function Page(props) {
 
     useEffect(() => {
         //gsap.to(pageRef, { opacity: 1, pointerEvents: "auto", duration: 4 });
+        TweenMax.to(pageRef, 4, {
+            css: {
+                opacity: "1",
+                pointerEvents: "auto",
+                ease: Power4.easeInOut,
+            },
+        });
 
         return () => {
             TweenMax.to(pageRef, 4, {
