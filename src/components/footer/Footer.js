@@ -26,7 +26,10 @@ function footer() {
             </div>
             <div className={styles.texte}>
                 <p>
-                    <Link to='/mentions-legales'>Mention légales</Link> - Sophie Roche - {date.getFullYear()} - Tout droit réservé
+                    <Link to='/mentions-legales' className={styles.link}>
+                        Mention légales
+                    </Link>{" "}
+                    - Sophie Roche - {date.getFullYear()} - Tout droit réservé
                 </p>
             </div>
         </footer>

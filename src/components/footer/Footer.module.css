@@ -34,3 +34,12 @@ footer {
     text-align: center;
     font-size: 0.7em;
 }
+
+.link {
+    text-decoration: underline;
+    color: #2e2a2e;
+}
+
+.link:hover {
+    color: #ff8627;
+}

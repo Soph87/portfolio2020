@@ -4,14 +4,16 @@
     font-style: normal;
     font-weight: bold;
     font-stretch: normal;
-    src: url("../src/fonts/recoleta-medium.woff2") format("woff2"), url("../src/fonts/recoleta-medium.woff") format("woff");
+    src: url("../src/fonts/recoleta-medium.woff2") format("woff2"),
+        url("../src/fonts/recoleta-medium.woff") format("woff");
 }
 @font-face {
     font-family: "Recoleta";
     font-style: normal;
     font-weight: normal;
     font-stretch: normal;
-    src: url("../src/fonts/recoleta-regular.woff2") format("woff2"), url("../src/fonts/recoleta-regular.woff") format("woff");
+    src: url("../src/fonts/recoleta-regular.woff2") format("woff2"),
+        url("../src/fonts/recoleta-regular.woff") format("woff");
 }
 
 * {
@@ -26,14 +28,9 @@ body {
 }
 
 /*----------------MAIN--------------------*/
-#root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
 
 main {
-    flex-grow: 1;
+    min-height: 100vh;
 }
 
 .container {
@@ -41,6 +38,29 @@ main {
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
+    z-index: 4;
+}
+
+.rose {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #e3166a;
+    z-index: 3;
+    transform: translateY(-100%);
+}
+
+.gris {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #5c565c;
+    z-index: 4;
+    transform: translateY(-100%);
 }
 
 /*----------------REACT PLAYER--------------------*/
@@ -58,27 +78,4 @@ main {
 /*----------------MENU--------------------*/
 header nav > div .active {
     color: #ff8627;
-}
-
-/*----------------TRANSITIONS PAGES--------------------*/
-.grise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: translateY(-100%);
-    background-color: #5c565c;
-    z-index: 4;
-}
-
-.rose {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: translateY(-100%);
-    background-color: #e3166a;
-    z-index: 3;
 }

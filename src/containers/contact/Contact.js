@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import axios from "axios";
 //CSS
 import styles from "./Contact.module.css";
@@ -11,13 +10,6 @@ import coucouG from "../../images/coucou.gif";
 import coucouD from "../../images/coucou-inverse.gif";
 
 function Contact() {
-    //Scroll la page en haut au chargement du composant
-    const { pathname } = useLocation();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-
     const [form, setForm] = useState({
         nom: { value: "", validation: { required: true, minLength: 3 }, isValid: false, classInvalide: false, error: "", valideSecond: false },
         email: { value: "", validation: { required: true, testEmail: true }, isValid: false, classInvalide: false, error: "", valideSecond: false },

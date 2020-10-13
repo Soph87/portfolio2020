@@ -15,8 +15,11 @@ function Mentions() {
                     <p className={styles.pcentre}>En vigueur au 22/07/2020</p>
                     <p>
                         Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie numérique,
-                        dite L.C.E.N., il est porté à la connaissance des Utilisateurs du site <Link to='/'>https://sophie-roche.fr/</Link> les présentes
-                        mentions légales.
+                        dite L.C.E.N., il est porté à la connaissance des Utilisateurs du site{" "}
+                        <Link to='/' className={styles.link}>
+                            sophie-roche.fr
+                        </Link>{" "}
+                        les présentes mentions légales.
                     </p>
                     <p>
                         La connexion et la navigation sur le site « Portfolio en ligne de Sophie Roche » par l’Utilisateur implique acceptation intégrale et
@@ -27,15 +30,21 @@ function Mentions() {
                 <div>
                     <h4 className={styles.titres}>ARTICLE 1 : L’ÉDITEUR</h4>
                     <p>
-                        L’édition et la direction de la publication du site <Link to='/'>https://sophie-roche.fr/</Link> est assurée par Sophie Roche,
-                        domiciliée 18 allée du Tabellio 69390 Charly, dont l'adresse e-mail est : contact@sophie-roche.fr.
+                        L’édition et la direction de la publication du site{" "}
+                        <Link to='/' className={styles.link}>
+                            sophie-roche.fr
+                        </Link>{" "}
+                        est assurée par Sophie Roche, domiciliée 18 allée du Tabellio 69390 Charly, dont l'adresse e-mail est : contact@sophie-roche.fr.
                     </p>
                 </div>
                 <div>
                     <h4 className={styles.titres}>ARTICLE 2 : L’HÉBERGEUR</h4>
                     <p>
-                        L'hébergeur du site <Link to='/'>https://sophie-roche.fr/</Link> est la Société OVH, dont le siège social est situé au 2 rue Kellermann
-                        BP 80157 59100 Roubaix.
+                        L'hébergeur du site{" "}
+                        <Link to='/' className={styles.link}>
+                            sophie-roche.fr
+                        </Link>{" "}
+                        est la Société OVH, dont le siège social est situé au 2 rue Kellermann BP 80157 59100 Roubaix.
                     </p>
                 </div>
                 <div>
@@ -45,8 +54,11 @@ function Mentions() {
                         d’une nécessité de maintenance.
                     </p>
                     <p>
-                        En cas de modification, interruption ou suspension des services le site <Link to='/'>https://sophie-roche.fr/</Link> ne saurait être
-                        tenu responsable.
+                        En cas de modification, interruption ou suspension des services le site{" "}
+                        <Link to='/' className={styles.link}>
+                            sophie-roche.fr
+                        </Link>{" "}
+                        ne saurait être tenu responsable.
                     </p>
                 </div>
                 <div>
@@ -73,8 +85,11 @@ function Mentions() {
                     <h4 className={styles.titres}>ARTICLE 6 : PROPRIÉTÉ INTELLECTUELLE</h4>
                     <p>
                         Toute utilisation, reproduction, diffusion, commercialisation, modification de toute ou partie du site{" "}
-                        <Link to='/'>https://sophie-roche.fr/</Link>, sans autorisation de l’Editeur est prohibée et pourra entraînée des actions et poursuites
-                        judiciaires telles que notamment prévues par le Code de la propriété intellectuelle et le Code civil.
+                        <Link to='/' className={styles.link}>
+                            sophie-roche.fr
+                        </Link>
+                        , sans autorisation de l’Editeur est prohibée et pourra entraînée des actions et poursuites judiciaires telles que notamment prévues par
+                        le Code de la propriété intellectuelle et le Code civil.
                     </p>
                 </div>
                 <div>

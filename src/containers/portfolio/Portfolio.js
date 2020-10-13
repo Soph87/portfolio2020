@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReactPlayer from "react-player/youtube";
-import { useLocation } from "react-router-dom";
 //Components
 import Page from "../../components/page/Page";
 import Titre from "../../components/UI/h2/Titre2";
@@ -12,12 +11,6 @@ import Modal from "../../components/modal/Modal";
 import styles from "./Portfolio.module.css";
 
 function Portfolio() {
-    //Scroll la page en haut au chargement du composant
-    const { pathname } = useLocation();
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-
     const [projets, setProjets] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [videoLink, setVideoLink] = useState("#");
@@ -40,13 +33,12 @@ function Portfolio() {
     };
 
     return (
-        <>
-            <Page titre='Welcome sur mon portfolio' soustitre="Voici quelques projets sur lesquels j'ai pu travailler, liste non exhaustive&nbsp;!">
-                {projets &&
-                    projets.map((projet, index) => {
-                        return <Projet key={projet.id} data={projet} index={index} handleClickParent={handleProjetClick} />;
-                    })}
-            </Page>
+        <Page titre='Welcome sur mon portfolio' soustitre="Voici quelques projets sur lesquels j'ai pu travailler, liste non exhaustive&nbsp;!">
+            {projets &&
+                projets.map((projet, index) => {
+                    return <Projet key={projet.id} data={projet} index={index} handleClickParent={handleProjetClick} />;
+                })}
+
             <section className={styles.bottom}>
                 <Titre>Mon profil vous plait&nbsp;? Entrons vite en contact alors&nbsp;!</Titre>
                 <div className={styles.cta}>
@@ -62,7 +54,7 @@ function Portfolio() {
                     </div>
                 </Modal>
             )}
-        </>
+        </Page>
     );
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 //CSS
 import "normalize.css";
 import "./App.css";
@@ -15,7 +16,9 @@ import NotFound from "./containers/404/NotFound";
 
 function App() {
     const [paddingHeight, setHeaderHeight] = useState(0);
+
     const headerref = useRef(null);
+
     const location = useLocation();
 
     useEffect(() => {
@@ -23,19 +26,31 @@ function App() {
         setHeaderHeight(height);
     }, []);
 
+    useEffect(() => {
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 1000);
+    }, [location.pathname]);
+
     return (
         <>
             <Header ref={headerref} />
             <main style={{ paddingTop: `${paddingHeight}px` }}>
-                <Switch location={location} key={location.pathname}>
-                    <Route path='/' exact>
-                        <Accueil headerheight={paddingHeight} />
-                    </Route>
-                    <Route path='/portfolio' component={Portfolio} />
-                    <Route path='/contact' component={Contact} />
-                    <Route path='/mentions-legales' component={Mentions} />
-                    <Route component={NotFound} />
-                </Switch>
+                <AnimatePresence initial={false} exitBeforeEnter>
+                    <Switch location={location} key={location.pathname}>
+                        <Route path='/' exact>
+                            <Accueil headerheight={paddingHeight} />
+                        </Route>
+                        <Route path='/portfolio'>
+                            <Portfolio />
+                        </Route>
+                        <Route path='/contact' component={Contact} />
+                        <Route path='/mentions-legales'>
+                            <Mentions />
+                        </Route>
+                        <Route component={NotFound} />
+                    </Switch>
+                </AnimatePresence>
             </main>
             <Footer />
         </>

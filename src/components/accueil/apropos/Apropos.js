@@ -34,7 +34,6 @@ function Apropos() {
         let translateY;
         if (sourisY < centreY) {
             translateY = ((centreY - sourisY) * 20) / -centreY;
-            console.log(translateY);
         } else {
             translateY = ((sourisY - centreY) * 20) / (window.innerHeight - centreY);
         }

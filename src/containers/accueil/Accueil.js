@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import axios from "axios";
 //Components
 import Hero from "../../components/accueil/hero/Hero";
@@ -7,12 +7,6 @@ import Works from "../../components/accueil/works/Works";
 import Apropos from "../../components/accueil/apropos/Apropos";
 
 function Accueil(props) {
-    //Scroll la page en haut au chargement du composant
-    const { pathname } = useLocation();
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-
     const [projets, setProjets] = useState(null);
     const refScrollBtn = useRef(null);
 
@@ -44,15 +38,30 @@ function Accueil(props) {
         };
 
         requestAnimationFrame(animation);
-
-        //refScrollBtn.current.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
         <>
-            <Hero scroll={scrollToWorks} />
-            <Works projets={projets} ref={refScrollBtn} />
-            <Apropos />
+            <motion.div
+                exit={{
+                    translateY: ["-100%", "0%", "0%", "200%", "-100%"],
+                    transition: { duration: 2, ease: "easeInOut", times: [0, 0.3, 0.7, 1, 1], delay: 0.5 },
+                }}
+                className='rose'></motion.div>
+            <motion.div
+                exit={{
+                    translateY: ["-100%", "0%", "0%", "200%", "-100%"],
+                    transition: { duration: 2, ease: "easeInOut", times: [0, 0.3, 0.7, 1, 1], delay: 0.5 },
+                }}
+                className='rose'></motion.div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.7, ease: "easeInOut" } }}
+                exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}>
+                <Hero scroll={scrollToWorks} />
+                <Works projets={projets} ref={refScrollBtn} />
+                <Apropos />
+            </motion.div>
         </>
     );
 }
