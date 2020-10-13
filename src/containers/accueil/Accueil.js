@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 //Components
+import Footer from "../../components/footer/Footer";
 import Hero from "../../components/accueil/hero/Hero";
 import Works from "../../components/accueil/works/Works";
 import Apropos from "../../components/accueil/apropos/Apropos";
@@ -41,28 +42,18 @@ function Accueil(props) {
     };
 
     return (
-        <>
-            <motion.div
-                exit={{
-                    translateY: ["-100%", "0%", "0%", "200%", "-100%"],
-                    transition: { duration: 2, ease: "easeInOut", times: [0, 0.3, 0.7, 1, 1], delay: 0.5 },
-                }}
-                className='rose'></motion.div>
-            <motion.div
-                exit={{
-                    translateY: ["-100%", "0%", "0%", "200%", "-100%"],
-                    transition: { duration: 2, ease: "easeInOut", times: [0, 0.3, 0.7, 1, 1], delay: 0.5 },
-                }}
-                className='rose'></motion.div>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 0.7, ease: "easeInOut" } }}
-                exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}
+            exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
+            className='mainContainer'>
+            <main style={{ paddingTop: `${props.headerheight}px` }}>
                 <Hero scroll={scrollToWorks} />
                 <Works projets={projets} ref={refScrollBtn} />
                 <Apropos />
-            </motion.div>
-        </>
+            </main>
+            <Footer />
+        </motion.div>
     );
 }
 

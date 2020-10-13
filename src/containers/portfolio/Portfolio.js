@@ -10,7 +10,7 @@ import Modal from "../../components/modal/Modal";
 //CSS
 import styles from "./Portfolio.module.css";
 
-function Portfolio() {
+function Portfolio(props) {
     const [projets, setProjets] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [videoLink, setVideoLink] = useState("#");
@@ -33,7 +33,10 @@ function Portfolio() {
     };
 
     return (
-        <Page titre='Welcome sur mon portfolio' soustitre="Voici quelques projets sur lesquels j'ai pu travailler, liste non exhaustive&nbsp;!">
+        <Page
+            titre='Welcome sur mon portfolio'
+            soustitre="Voici quelques projets sur lesquels j'ai pu travailler, liste non exhaustive&nbsp;!"
+            headerheight={props.headerheight}>
             {projets &&
                 projets.map((projet, index) => {
                     return <Projet key={projet.id} data={projet} index={index} handleClickParent={handleProjetClick} />;

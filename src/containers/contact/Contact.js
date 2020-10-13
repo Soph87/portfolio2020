@@ -9,11 +9,32 @@ import Bouton from "../../components/UI/boutons/Bouton";
 import coucouG from "../../images/coucou.gif";
 import coucouD from "../../images/coucou-inverse.gif";
 
-function Contact() {
+function Contact(props) {
     const [form, setForm] = useState({
-        nom: { value: "", validation: { required: true, minLength: 3 }, isValid: false, classInvalide: false, error: "", valideSecond: false },
-        email: { value: "", validation: { required: true, testEmail: true }, isValid: false, classInvalide: false, error: "", valideSecond: false },
-        message: { value: "", validation: { required: true, minLength: 10 }, isValid: false, classInvalide: false, error: "", valideSecond: false },
+        nom: {
+            value: "",
+            validation: { required: true, minLength: 3 },
+            isValid: false,
+            classInvalide: false,
+            error: "",
+            valideSecond: false,
+        },
+        email: {
+            value: "",
+            validation: { required: true, testEmail: true },
+            isValid: false,
+            classInvalide: false,
+            error: "",
+            valideSecond: false,
+        },
+        message: {
+            value: "",
+            validation: { required: true, minLength: 10 },
+            isValid: false,
+            classInvalide: false,
+            error: "",
+            valideSecond: false,
+        },
         coche: { value: false, validation: { requiredCoche: true }, isValid: false, classInvalide: false, error: "" },
     });
     const [resultatEnvoi, setResultatEnvoi] = useState({ classe: "", msg: "" });
@@ -114,12 +135,18 @@ function Contact() {
                         }
                         setForm(formCopie);
                     } else {
-                        setResultatEnvoi({ classe: "pasOk", msg: "Un problème est survenu pendant l'envoi de votre message... Merci de réessayer" });
+                        setResultatEnvoi({
+                            classe: "pasOk",
+                            msg: "Un problème est survenu pendant l'envoi de votre message... Merci de réessayer",
+                        });
                     }
                 })
                 .catch((err) => {
                     console.log(err);
-                    setResultatEnvoi({ classe: "pasOk", msg: "Un problème est survenu pendant l'envoi de votre message... Merci de réessayer" });
+                    setResultatEnvoi({
+                        classe: "pasOk",
+                        msg: "Un problème est survenu pendant l'envoi de votre message... Merci de réessayer",
+                    });
                 });
         }
     };
@@ -127,7 +154,8 @@ function Contact() {
     return (
         <Page
             titre="Pour m'envoyer un message, c'est bien ici&nbsp;!"
-            soustitre="Pour me contacter par d'autres moyens, mon adresse email ainsi que mon numéro de téléphone sont disponibles sur mon CV">
+            soustitre="Pour me contacter par d'autres moyens, mon adresse email ainsi que mon numéro de téléphone sont disponibles sur mon CV"
+            headerheight={props.headerheight}>
             <div className={styles.container}>
                 <div className={styles.brasG}>
                     <img src={coucouG} alt="Animation d'un bras qui fait coucou" />
@@ -187,7 +215,8 @@ function Contact() {
                                 onChange={(e) => handleChange(e, "coche")}
                             />
                             <label htmlFor='validation' className={styles.texteVal}>
-                                En soumettant ce formulaire, j’accepte que les informations saisies soient utilisées pour permettre de me recontacter
+                                En soumettant ce formulaire, j’accepte que les informations saisies soient utilisées
+                                pour permettre de me recontacter
                             </label>
                         </div>
                         <div className={styles.error}>{form.coche.error}</div>
@@ -197,7 +226,11 @@ function Contact() {
                             <span>GO !</span> Envoyer le message
                         </Bouton>
                     </div>
-                    {resultatEnvoi && <div className={resultatEnvoi.classe === "ok" ? styles.repOk : styles.repBad}>{resultatEnvoi.msg}</div>}
+                    {resultatEnvoi && (
+                        <div className={resultatEnvoi.classe === "ok" ? styles.repOk : styles.repBad}>
+                            {resultatEnvoi.msg}
+                        </div>
+                    )}
                 </form>
                 <div className={styles.brasD}>
                     <img src={coucouD} alt="Animation d'un bras qui fait coucou" />

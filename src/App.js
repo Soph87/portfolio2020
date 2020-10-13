@@ -6,7 +6,6 @@ import "normalize.css";
 import "./App.css";
 //Components
 import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
 //Containers
 import Accueil from "./containers/accueil/Accueil";
 import Contact from "./containers/contact/Contact";
@@ -32,27 +31,29 @@ function App() {
         }, 1000);
     }, [location.pathname]);
 
+    console.log(paddingHeight);
     return (
         <>
             <Header ref={headerref} />
-            <main style={{ paddingTop: `${paddingHeight}px` }}>
-                <AnimatePresence initial={false} exitBeforeEnter>
-                    <Switch location={location} key={location.pathname}>
-                        <Route path='/' exact>
-                            <Accueil headerheight={paddingHeight} />
-                        </Route>
-                        <Route path='/portfolio'>
-                            <Portfolio />
-                        </Route>
-                        <Route path='/contact' component={Contact} />
-                        <Route path='/mentions-legales'>
-                            <Mentions />
-                        </Route>
-                        <Route component={NotFound} />
-                    </Switch>
-                </AnimatePresence>
-            </main>
-            <Footer />
+            <AnimatePresence initial={false} exitBeforeEnter>
+                <Switch location={location} key={location.pathname}>
+                    <Route path='/' exact>
+                        <Accueil headerheight={paddingHeight} />
+                    </Route>
+                    <Route path='/portfolio'>
+                        <Portfolio headerheight={paddingHeight} />
+                    </Route>
+                    <Route path='/contact'>
+                        <Contact headerheight={paddingHeight} />
+                    </Route>
+                    <Route path='/mentions-legales'>
+                        <Mentions headerheight={paddingHeight} />
+                    </Route>
+                    <Route>
+                        <NotFound headerheight={paddingHeight} />
+                    </Route>
+                </Switch>
+            </AnimatePresence>
         </>
     );
 }
