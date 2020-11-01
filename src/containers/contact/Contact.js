@@ -123,7 +123,7 @@ function Contact(props) {
         if (validComplet) {
             let message = JSON.stringify({ nom: form.nom.value, email: form.email.value, message: form.message.value });
             axios
-                .post(`${process.env.REACT_APP_URL}back/envoiemail`, message)
+                .post("/api/envoiemail", message)
                 .then((response) => {
                     console.log(response);
                     if (response.data === "success") {
@@ -223,7 +223,7 @@ function Contact(props) {
                     </div>
                     <div className={styles.submit}>
                         <Bouton couleur='rose'>
-                            <span>GO !</span> Envoyer le message
+                            <span>GO&nbsp;!</span> Envoyer le message
                         </Bouton>
                     </div>
                     {resultatEnvoi && (

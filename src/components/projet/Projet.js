@@ -1,15 +1,15 @@
 import React from "react";
 //CSS
 import styles from "./Projet.module.css";
+//SVG
+import Git from "../SVG/Github";
 
 export default function Projet(props) {
     let data = props.data;
-    let img = process.env.REACT_APP_URL + "back/public/images/" + data.image;
+    let img = "https://sophie-roche.fr/api/public/images/" + data.image;
     let technos = data.technos.split(",");
     let paire = props.index % 2 === 0 && true;
-    let paireClasse = paire
-        ? styles.projetCard
-        : [styles.cardImpaire, styles.projetCard].join(" ");
+    let paireClasse = paire ? styles.projetCard : [styles.cardImpaire, styles.projetCard].join(" ");
 
     const handleProjetClick = (video) => {
         props.handleClickParent(video);
@@ -34,22 +34,25 @@ export default function Projet(props) {
                         return techno + ", ";
                     })}
                 </p>
-                {data.video === "1" ? (
-                    <button
-                        className={styles.liensOndule}
-                        onClick={() => handleProjetClick(data.lien)}
-                    >
-                        Voir la vidéo
-                    </button>
-                ) : (
-                    <a
-                        href={data.lien}
-                        className={styles.liensOndule}
-                        target='blank'
-                    >
-                        Visiter le site
-                    </a>
-                )}
+                <div className={styles.boutonContainer}>
+                    {data.git && (
+                        <a href={data.git} target='_blank' rel='noopener noreferrer' className={styles.git}>
+                            <Git />
+                        </a>
+                    )}
+                    {data.video === "1" ? (
+                        <button
+                            className={styles.liensOndule}
+                            rel='noopener noreferrer'
+                            onClick={() => handleProjetClick(data.lien)}>
+                            Voir la vidéo
+                        </button>
+                    ) : (
+                        <a href={data.lien} className={styles.liensOndule} target='blank'>
+                            Visiter le site
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );

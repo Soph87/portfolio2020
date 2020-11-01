@@ -68,16 +68,18 @@ function Apropos() {
                         <div className={styles.texteMoi}>
                             <h3>Un parcours un peu atypique pour une approche originale</h3>
                             <p>
-                                Je suis une webdesigneuse et intégratrice web expérimentée, et développeuse web junior. Suite à mes études en école de design,
-                                je suis particulièrement intéressée par l'expérience utilisateur, et par l'idée qu'il faut replacer l'humain au centre de la
+                                Je suis une webdesigneuse et intégratrice web expérimentée, et développeuse web junior.
+                                Suite à mes études en école de design, je suis particulièrement intéressée par
+                                l'expérience utilisateur, et par l'idée qu'il faut replacer l'humain au centre de la
                                 réflexion.
                             </p>
                             <p>
-                                Ayant toujours eu une affinité avec le développement, j'ai souhaité étendre mes compétences. Pour cela, j'ai suivi 2 formations
-                                de type bootcamp en développement web. Je suis maintenant à la recherche d'un emploi de développeuse web.
+                                Ayant toujours eu une affinité avec le développement, j'ai souhaité étendre mes
+                                compétences. Pour cela, j'ai suivi 2 formations de type bootcamp en développement web.
+                                Je suis maintenant à la recherche d'un emploi de développeuse web.
                             </p>
                             <Bouton couleur='rose' link='/files/sophie-roche-CV.pdf' target='oui'>
-                                Je veux bien un petit CV à emporter, merci !
+                                Je veux bien un petit CV à emporter, merci&nbsp;!
                             </Bouton>
                         </div>
                     </div>
@@ -86,7 +88,7 @@ function Apropos() {
                     <Titre>Mon profil vous plait&nbsp;? Entrons vite en contact alors&nbsp;!</Titre>
                     <div className={styles.cta}>
                         <Bouton couleur='rose' link='/contact'>
-                            <span>YES !</span>Au formulaire de contact SVP
+                            <span>YES&nbsp;!</span>Au formulaire de contact SVP
                         </Bouton>
                     </div>
                 </div>

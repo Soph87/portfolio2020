@@ -22,25 +22,22 @@ function Hero(props) {
                 </div>
                 <div id={styles.heroContenu}>
                     <Titre>
-                        Développeuse et webdesigner, j'ai plus d'une corde à mon
-                        arc&nbsp;! Et si on faisait des{" "}
+                        Développeuse et webdesigner, j'ai plus d'une corde à mon arc&nbsp;! Et si on faisait des{" "}
                         <NavLink id={styles.logo} to='/portfolio'>
-                            projets cools
+                            projets&nbsp;cools
                         </NavLink>{" "}
                         ensemble&nbsp;?
                     </Titre>
                     <SousTitre>
-                        Si vous avez besoin d'une développeuse capable d'adapter
-                        les maquettes au gré des avancements d'un projet,
-                        autodidacte et en plus sympa, ne cherchez plus, vous
-                        m'avez trouvée&nbsp;!
+                        Si vous avez besoin d'une développeuse capable d'adapter les maquettes au gré des avancements
+                        d'un projet, autodidacte et en plus sympa, ne cherchez plus, vous m'avez trouvée&nbsp;!
                     </SousTitre>
                     <div className={styles.cta}>
                         <Bouton couleur='rose' link='/contact'>
-                            <span>OK !</span> On se contacte vite alors !
+                            <span>OK&nbsp;!</span> On se contacte vite alors&nbsp;!
                         </Bouton>
                         <Bouton couleur='gris' click={props.scroll}>
-                            <span>Mmm...</span> Je peux en savoir plus avant ?
+                            <span>Mmm...</span> Je peux en savoir plus avant&nbsp;?
                         </Bouton>
                     </div>
                 </div>

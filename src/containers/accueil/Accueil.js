@@ -12,7 +12,7 @@ function Accueil(props) {
     const refScrollBtn = useRef(null);
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_URL}back/projetmin`).then((response) => {
+        axios.get("/api/projetmin").then((response) => {
             setProjets(Object.values(response.data));
         });
     }, []);
@@ -44,7 +44,7 @@ function Accueil(props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}
+            animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut", delay: 1 } }}
             exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
             className='mainContainer'>
             <main style={{ paddingTop: `${props.headerheight}px` }}>

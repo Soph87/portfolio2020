@@ -39,6 +39,12 @@
     padding: 0.5em 0;
 }
 
+.boutonContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .liensOndule {
     color: #2e2a2e;
     text-decoration: none;
@@ -63,7 +69,19 @@
     background-size: 1px 2.5px;
 }
 
-@media screen and (min-width: 650px) {
+.git {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin-right: 20px;
+    color: #5c565c;
+}
+
+.git:hover {
+    color: #ff9800;
+}
+
+@media screen and (min-width: 680px) {
     .projetCard {
         display: flex;
         justify-content: center;
@@ -73,7 +91,7 @@
     .projetCard img {
         max-width: 100%;
         margin: 0;
-        min-width: 300px;
+        min-width: 350px;
     }
 
     .cardImage {
@@ -116,6 +134,10 @@
 
     .cardImpaire .cardTexte {
         text-align: right;
+    }
+
+    .cardImpaire .boutonContainer {
+        justify-content: flex-end;
     }
 }
 

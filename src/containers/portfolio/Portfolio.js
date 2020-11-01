@@ -16,7 +16,7 @@ function Portfolio(props) {
     const [videoLink, setVideoLink] = useState("#");
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_URL}back/tousprojets`).then((response) => {
+        axios.get("/api/tousprojets").then((response) => {
             setProjets(Object.values(response.data));
         });
     }, []);
@@ -46,7 +46,7 @@ function Portfolio(props) {
                 <Titre>Mon profil vous plait&nbsp;? Entrons vite en contact alors&nbsp;!</Titre>
                 <div className={styles.cta}>
                     <Bouton couleur='rose' link='/contact'>
-                        <span>YES !</span>Au formulaire de contact SVP
+                        <span>YES&nbsp;!</span>Au formulaire de contact SVP
                     </Bouton>
                 </div>
             </section>
